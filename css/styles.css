@@ -79,6 +79,11 @@ body {
 .colors-list__color {
   width: 26px;
   height: 26px;
+  cursor: pointer;
+}
+
+.colors-list__color:hover {
+  border: 2px solid black;
 }
 
 .color-picker__add-btn {
