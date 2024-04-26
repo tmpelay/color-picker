@@ -39,9 +39,13 @@ let createGradient = (canvasCtx, color1, color2, direction) => {
 
 let addColor = () => {
   let newColor = document.createElement("div");
-  newColor.innerHTML = '<div class="colors-list__color"></div>';
+  newColor.innerHTML = `<div data-color="${color}" class="colors-list__color" onclick="setColor(this.dataset.color)"></div>`;
   newColor.style.backgroundColor = color;
   colorsList.appendChild(newColor);
+};
+
+let setColor = (color) => {
+  document.body.style.backgroundColor = color;
 };
 
 createGradient(colorCtx, "#fff", hue, "horizontal");
@@ -70,8 +74,6 @@ colorCanvas.addEventListener("click", (event) => {
 
   pixel = colorCtx.getImageData(x - canvasPos.x, y - canvasPos.y, 1, 1).data;
   color = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
-
-  console.log(x - canvasPos.x, y - canvasPos.y);
 
   colorPicker.style.left = `${x - canvasPos.x}px`;
   colorPicker.style.top = `${y - canvasPos.y}px`;
