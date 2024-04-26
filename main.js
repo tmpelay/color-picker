@@ -2,6 +2,7 @@ let colorCanvas = document.getElementById("color-canvas");
 let hueCanvas = document.getElementById("hue-canvas");
 let colorPicker = document.getElementById("color-picker");
 let huePicker = document.getElementById("hue-picker");
+let colorsList = document.getElementById("colors-list");
 
 let colorCtx = colorCanvas.getContext("2d", { willReadFrequently: true });
 let hueCtx = hueCanvas.getContext("2d", { willReadFrequently: true });
@@ -34,6 +35,13 @@ let createGradient = (canvasCtx, color1, color2, direction) => {
   gradient.addColorStop(1, color2);
   canvasCtx.fillStyle = gradient;
   canvasCtx.fillRect(0, 0, canvasCtx.canvas.width, canvasCtx.canvas.height);
+};
+
+let addColor = () => {
+  let newColor = document.createElement("div");
+  newColor.innerHTML = '<div class="colors-list__color"></div>';
+  newColor.style.backgroundColor = color;
+  colorsList.appendChild(newColor);
 };
 
 createGradient(colorCtx, "#fff", hue, "horizontal");

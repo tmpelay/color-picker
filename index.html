@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Color Picker</title>
   </head>
   <body>
@@ -29,8 +33,10 @@
             <span id="hue-picker" class="color-picker__hue"></span>
           </div>
         </div>
-        <div class="color-picker__color-list">
-          <button>+</button>
+        <div id="colors-list" class="color-picker__colors-list">
+          <button class="color-picker__add-btn" onclick="addColor()">
+            <span class="material-symbols-outlined">add</span>
+          </button>
         </div>
       </div>
     </main>

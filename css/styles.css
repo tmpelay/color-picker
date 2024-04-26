@@ -17,15 +17,15 @@ body {
 
 .color-picker__container {
   display: flex;
+  flex-direction: column;
   background-color: #fafafa;
-  padding: 30px 20px;
+  padding: 34px;
   border-radius: 10px;
   box-shadow: 0 0 20px 6px #0005;
 }
 
 .color-picker__canvas {
   position: relative;
-  margin: 0 10px;
 }
 
 .hue--picker {
@@ -38,6 +38,7 @@ body {
 
 .color-picker__color-selector {
   position: relative;
+  margin-right: 20px;
 }
 
 .color-picker__hue-selector {
@@ -46,6 +47,8 @@ body {
 
 .color-picker__color {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -57,11 +60,38 @@ body {
 .color-picker__hue {
   position: absolute;
   top: 0;
-  left: 8px;
+  left: -2px;
   width: 25px;
   height: 14px;
   border-radius: 6px;
   border: 5px solid #000;
   background-color: #f00;
-  transition: background-color 0.3s;
+}
+
+.color-picker__colors-list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 340px;
+  gap: 5px;
+}
+
+.colors-list__color {
+  width: 26px;
+  height: 26px;
+}
+
+.color-picker__add-btn {
+  text-align: center;
+  line-height: 1;
+  width: 26px;
+  height: 26px;
+  color: #050505;
+  background-color: #fafafa;
+  border: 2px solid #050505;
+}
+
+.color-picker__add-btn:active {
+  background-color: #050505;
+  color: #fafafa;
 }
